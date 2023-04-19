@@ -118,7 +118,9 @@ ui = Builder.load_string("""
                                             valign:"middle"
 """)
 class ChangePinButtonBox(TouchBox):
+    #punch here (responsive BoxLayout Object) if you want to go and change your pin
     def respondToTouch(self):
+        #respond by changing the color of the button box
         self.parent.root.ids.about_button_box.md_bg_color = [0, 154/float(255), 255/float(255), 1]
         self.parent.root.ids.change_pin_button_box.md_bg_color = [55/float(255), 55/float(255), 142/float(255), 1]
 class AboutButtonBox(TouchBox):
@@ -139,9 +141,3 @@ class SettingsScreen(MDScreen):
         button.text_color = [0, 154/float(255), 255/float(255), 1]
         self.ids.settings_body_screen_manager.transition = SlideTransition(direction = "left")
         self.ids.settings_body_screen_manager.current = "about_screen"
-class TestApp(MDApp):
-    def build(self):
-        root = SettingsScreen()
-        return root
-if __name__ == "__main__":
-    TestApp().run()
