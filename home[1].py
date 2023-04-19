@@ -142,6 +142,7 @@ ui = Builder.load_string("""
                         on_release:root.goToSettings()
 """)
 class LoadScreen(MDScreen):
+    #display loading screen
     pass
 class HomeScreen(MDScreen):
     def __init__(self, **kwargs):
@@ -154,6 +155,7 @@ class HomeScreen(MDScreen):
         #Clock.schedule_once(self.checkFiles, 1)
         #Clock.schedule_once(self.moveToVideosScreen, 3)
     def loadFiles(self, parent):
+        #load all media files from local drive
         self.base = parent
         Clock.schedule_once(self.checkFiles, 1)
         Clock.schedule_once(self.moveToVideosScreen, 3)
