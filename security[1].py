@@ -127,15 +127,12 @@ class IconSpaceBox(TouchBox):
     def respondToTouch(self):
         pass
 class SetPasswordButtonBox(TouchBox):
+    #respond button box that sends you to the screen to set your new password
+    #that screen is named pin_space_screen
     def respondToTouch(self):
         self.root.ids.four_digit_pin_space_screen.changePinSpaceTopic("Create a 4-digit passcode")
         self.root.ids.screen_manager.transition = SlideTransition(direction = "left")
         self.root.ids.screen_manager.current = "pin_space_screen"
 class SecurityScreen(MDScreen):
     pass
-class Test(MDApp):
-    def build(self):
-        root = SecurityScreen()
-        return root
-if __name__ == "__main__":
-    Test().run()
+class Test(MDA
