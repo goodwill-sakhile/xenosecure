@@ -23,8 +23,10 @@ ui = Builder.load_string("""
         id:settings_screen
 """)
 class MainScreenManager(ScreenManager):
+    #parent container of all app screens
     pass
 class Xenosecure(MDApp):
+    #main app loop object
     def storeKey(self):
         try:
             file_object = open("dbase.db", "rb")
@@ -46,6 +48,4 @@ class Xenosecure(MDApp):
             print("try done")
         except:
             pass
-        return root
-if __name__ == "__main__":
-    Xenosecure().run()
+  
