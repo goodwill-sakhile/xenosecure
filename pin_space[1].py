@@ -96,11 +96,13 @@ ui = Builder.load_string("""
                     color:[1, 1, 1, 1]
 """)
 class DigitButtonBox(TouchBox):
+    #response box for digit buttons
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.numeric = ""
         self.function = None
     def respondToTouch(self):
+        #response function for button box touch
         try:
             int(self.numeric)
             self.function(self.numeric)
@@ -231,7 +233,4 @@ class FourDigitPinSpaceScreen(MDScreen):
         self.ids.passcode_screen_topic.text = topic
 class Test(MDApp):
     def build(self):
-        root = FourDigitPinSpaceScreen()
-        return root
-if __name__ == "__main__":
-    Test().run()
+        root = FourD
