@@ -151,6 +151,7 @@ ui = Builder.load_string("""
                 size:self.parent.size
 """)
 class TouchBox(MDBoxLayout):
+    #button like responsive box that
     def on_touch_down(self, touch):
         x_size = self.pos[0] + self.size[0]
         y_size = self.pos[1] + self.size[1]
@@ -159,21 +160,26 @@ class TouchBox(MDBoxLayout):
     def respondToTouch(self):
         pass
 class VideoFilesScreen(MDScreen):
+    #Video files screen 
     def __init__(self, **kwargs):
         super(MDScreen, self).__init__(**kwargs)
         print(self.parent)
         self.files = self.parent
 class PlayButtonBox(TouchBox):
     def playSound(self, file_name):
+        #this function play the music sound when called and the song to be played is accepted as a file_name parameter
         self.parent.ids.media_icon_object.text_color = [20/float(255), 20/float(255), 20/float(255), 1]
         self.parent.ids.file_name.color = [20/float(255), 20/float(255), 20/float(255), 1]
         self.parent.parent.sound = SoundLoader.load(file_name)
         self.parent.parent.sound.play()
     def stopSound(self):
+        #this function stops the sound that is playing
         self.parent.parent.sound.stop()
         self.parent.ids.media_icon_object.text_color = [190/float(255), 190/float(255), 190/float(255), 1]
         self.parent.ids.file_name.color = [190/float(255), 190/float(255), 190/float(255), 1]
     def respondToTouch(self):
+        #this respond by playing music if it was not playing
+        #or stop it if it was already playing
         print("Respond to play sound buttontouch")
         if self.parent.file_type == "Music":
             print("file type is music")
@@ -198,6 +204,8 @@ class PlayButtonBox(TouchBox):
                 self.playSound(file_name)
 class EncryptButtonBox(TouchBox):
     def respondToTouch(self):
+        #function responds by encrypting the chosen file
+        #if it was already encrypted if pop ups a dialog box that informs the user
         if self.parent.encrypted:
             self.callDialog("File is already encrypted!")
         elif not self.parent.parent.encrypting:
@@ -209,11 +217,13 @@ class EncryptButtonBox(TouchBox):
         else:
             self.callDialog("Another file is still encrypting!")
     def callDialog(self, text):
+        #when function is called it displays a dialog box
         button = MDFillRoundFlatButton(text = "Ok")
         self.dialog = MDDialog(title = "Encryption failure", text = text, buttons = [button])
         button.bind(on_press = self.close)
         self.dialog.open()
     def close(self, button):
+        #this called to close the dialog box
         self.dialog.dismiss()
 class MediaFileBar(MDBoxLayout):
     def __init__(self, **kwargs):
