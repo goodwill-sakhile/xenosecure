@@ -70,12 +70,14 @@ class TouchBox(MDBoxLayout):
     def respondToTouch(self):
         pass
 class ViewMediaFileScreen(MDScreen):
+    #main media file screen
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.current_image_tile = None
         self.encrypting_files_list = []
         self.encrypting = False
     def goBackToHome(self):
+        #return to home_screen
         self.parent.transition = SlideTransition(direction = "right")
         self.parent.current = "home_screen"
 class EncryptFileButtonBox(TouchBox):
