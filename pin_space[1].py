@@ -109,6 +109,7 @@ class DigitButtonBox(TouchBox):
         except:
             self.function()
 class DigitSpace(TouchBox):
+    #digit space that respond as a button
     pass
 class DigitLayout(MDGridLayout):
     def __init__(self, **kwargs):
@@ -233,4 +234,7 @@ class FourDigitPinSpaceScreen(MDScreen):
         self.ids.passcode_screen_topic.text = topic
 class Test(MDApp):
     def build(self):
-        root = FourD
+        root = FourDigitPinSpaceScreen()
+        return root
+if __name__ == "__main__":
+    Test().run()
