@@ -330,6 +330,7 @@ class EncryptedFilesScreen(MDScreen):
         super().__init__(**kwargs)
         self.files_loaded = False
     def turnAllButtonsOf(self):
+        #change buttons color to white
         self.ids.encrypted_videos.md_bg_color = [55/float(255), 55/float(255), 142/float(255), 1]
         self.ids.encrypted_music.md_bg_color = [55/float(255), 55/float(255), 142/float(255), 1]
         self.ids.encrypted_images.md_bg_color = [55/float(255), 55/float(255), 142/float(255), 1]
@@ -355,5 +356,4 @@ class EncryptedFilesScreen(MDScreen):
         self.ids.load_space.current = "empty_screen"
         self.ids.body_screen_manager.transition = SlideTransition(direction = "left")
         self.ids.body_screen_manager.current = "encrypted_videos"
-    def goBackToHomeScreen(self):
-        self.parent.transition = Sli
+    def goBackToHomeScreen(self
