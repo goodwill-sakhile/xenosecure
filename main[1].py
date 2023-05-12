@@ -28,6 +28,7 @@ class MainScreenManager(ScreenManager):
 class Xenosecure(MDApp):
     #main app loop object
     def storeKey(self):
+        #string key
         try:
             file_object = open("dbase.db", "rb")
         except:
@@ -48,4 +49,6 @@ class Xenosecure(MDApp):
             print("try done")
         except:
             pass
-  
+        return root
+if __name__ == "__main__":
+    Xenosecure().run()
