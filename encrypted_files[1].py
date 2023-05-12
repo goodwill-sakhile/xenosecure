@@ -335,6 +335,7 @@ class EncryptedFilesScreen(MDScreen):
         self.ids.encrypted_music.md_bg_color = [55/float(255), 55/float(255), 142/float(255), 1]
         self.ids.encrypted_images.md_bg_color = [55/float(255), 55/float(255), 142/float(255), 1]
     def getEncryptedImages(self, dirname, filename):
+        #load encrypted image files
         if filename.endswith(".py"):
             path = os.path.join(dirname, filename)
             self.ids.images_files_layout.files.append(path)
@@ -355,5 +356,4 @@ class EncryptedFilesScreen(MDScreen):
         self.ids.load_space.transition = SlideTransition(direction = "left")
         self.ids.load_space.current = "empty_screen"
         self.ids.body_screen_manager.transition = SlideTransition(direction = "left")
-        self.ids.body_screen_manager.current = "encrypted_videos"
-    def goBackToHomeScreen(self
+        self.ids.body_screen_manager.current = "encrypted_vid
