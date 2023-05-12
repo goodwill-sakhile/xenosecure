@@ -340,6 +340,7 @@ class EncryptedFilesScreen(MDScreen):
             path = os.path.join(dirname, filename)
             self.ids.images_files_layout.files.append(path)
     def getEncryptedAudios(self, dirname, filename):
+        #load encrypted audio files 
         if filename.endswith(".py"):
             path = os.path.join(dirname, filename)
             self.ids.music_files_layout.files.append(path)
@@ -356,4 +357,4 @@ class EncryptedFilesScreen(MDScreen):
         self.ids.load_space.transition = SlideTransition(direction = "left")
         self.ids.load_space.current = "empty_screen"
         self.ids.body_screen_manager.transition = SlideTransition(direction = "left")
-        self.ids.body_screen_manager.current = "encrypted_vid
+        self.ids.body_sc
