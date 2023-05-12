@@ -310,6 +310,7 @@ class EncryptedVideosButton(TouchBox):
             self.parent.root.transition = NoTransition()
             self.parent.root.current = "encrypted_videos"
 class EncryptedMusicButton(TouchBox):
+    #move to encrypted music screen
     def respondToTouch(self):
         if self.parent.root.files_loaded:
             self.parent.root.turnAllButtonsOf()
@@ -355,4 +356,4 @@ class EncryptedFilesScreen(MDScreen):
         self.ids.body_screen_manager.current = "encrypted_videos"
     def goBackToHomeScreen(self):
         self.parent.transition = SlideTransition(direction = "right")
-        self.parent.current = "home_screen"
+       
