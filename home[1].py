@@ -162,6 +162,7 @@ class HomeScreen(MDScreen):
         Clock.schedule_once(self.moveToMusicScreen, 3)
         Clock.schedule_once(self.moveToImagesScreen, 3)
     def lookForAudios(self, dirname, filename):
+        #search audio files on local storage
         if filename.endswith(".mp3") or filename.endswith(".wav") or filename.endswith(".au"):
             pathname = os.path.join(dirname, filename)
             self.music_list.append(pathname)
