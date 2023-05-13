@@ -167,6 +167,7 @@ class HomeScreen(MDScreen):
             pathname = os.path.join(dirname, filename)
             self.music_list.append(pathname)
     def lookForVideos(self, dirname, filename):
+        #search for videos
         if filename.endswith(".mp4") or filename.endswith(".mkv") or filename.endswith(".avi"):
             pathname = os.path.join(dirname, filename)
             self.videos_list.append(pathname)
@@ -274,4 +275,4 @@ class HomeScreen(MDScreen):
         self.moveToEncryptedFiles()
     def moveToEncryptedFiles(self):
        self.parent.transition = SlideTransition(direction = "left")
-       self.parent.current = "encrypted_files_screen"
+       self.parent.current
