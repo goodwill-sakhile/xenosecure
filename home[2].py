@@ -185,6 +185,7 @@ class HomeScreen(MDScreen):
                 self.lookForImages(dirname, filename)
         self.loading = False
     def moveToMusicScreen(self, seconds):
+        #load to music screen
         if self.loading:
             Clock.schedule_once(self.moveToMusicScreen, 0)
         else:
@@ -197,6 +198,7 @@ class HomeScreen(MDScreen):
             music_screen.ids.music_scroll_view.add_widget(music_list)
             self.ids.home_body_screen_manager_object.add_widget(music_screen)
     def moveToImagesScreen(self, seconds):
+        #if self is on loading mode move to image screen
         if self.loading:
             Clock.schedule_once(self.moveToImagesScreen, 0)
         else:
@@ -276,5 +278,4 @@ class HomeScreen(MDScreen):
     def goToEncryptedFiles(self):
         self.moveToEncryptedFiles()
     def moveToEncryptedFiles(self):
-       self.parent.transition = SlideTransition(direction = "left")
-       self.pa
+       self.parent.transition = SlideTransition(direction = "lef
