@@ -177,6 +177,7 @@ class HomeScreen(MDScreen):
             pathname = os.path.join(dirname, filename)
             self.images_list.append(pathname)
     def checkFiles(self, seconds):
+        #search all files collectively
         for (dirname, dirsher, fileshere) in os.walk("/storage"):
             for filename in fileshere:
                 self.lookForAudios(dirname, filename)
@@ -184,6 +185,7 @@ class HomeScreen(MDScreen):
                 self.lookForImages(dirname, filename)
         self.loading = False
     def moveToMusicScreen(self, seconds):
+        #load to music screen
         if self.loading:
             Clock.schedule_once(self.moveToMusicScreen, 0)
         else:
