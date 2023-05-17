@@ -198,9 +198,11 @@ class HomeScreen(MDScreen):
             music_screen.ids.music_scroll_view.add_widget(music_list)
             self.ids.home_body_screen_manager_object.add_widget(music_screen)
     def moveToImagesScreen(self, seconds):
+        #if self is on loading mode move to image screen
         if self.loading:
             Clock.schedule_once(self.moveToImagesScreen, 0)
         else:
+            #else switch to back home screen
             self.base.transition = SlideTransition(direction = "left")
             self.base.current = "home_screen"
             images_screen = ImagesFilesScreen()
