@@ -358,4 +358,9 @@ class EncryptedFilesScreen(MDScreen):
                 self.getEncryptedImages(dirname, filename)
         self.ids.load_space.transition = SlideTransition(direction = "left")
         self.ids.load_space.current = "empty_screen"
-        self.ids.body_scree
+        self.ids.body_screen_manager.transition = SlideTransition(direction = "left")
+        self.ids.body_screen_manager.current = "encrypted_videos"
+    def goBackToHomeScreen(self):
+        #reroute to home screen
+        self.parent.transition = SlideTransition(direction = "right")
+        self.parent.current = "home_screen"
