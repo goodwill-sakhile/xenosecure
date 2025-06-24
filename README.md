@@ -27,7 +27,7 @@ Xenosecure is a professional-grade Java-based file encryption tool designed to p
 ## 🚀 Getting Started
 
 ```bash
-git clone https://github.com/yourname/securecryptor.git
-cd securecryptor
+git clone https://github.com/goodwill-sakhile/xenosecure.git
+cd xenosecure
 mvn clean install
 java -jar target/securecryptor.jar --encrypt myfile.txt
